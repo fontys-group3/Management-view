@@ -16,7 +16,7 @@ export default class OrderList extends React.Component {
     render(){
         return(
             <ul>
-                {this.state.orders.map(order => <li key={order.id}>{order.tableId}</li>)}
+                {this.state.orders.map(order => <li key={order.id}>{order.tableId},{order.orderId},{order.orderState},{order.startTime},{order.assignTime},{order.finishTime}</li>)}
             </ul>
         )
     }
