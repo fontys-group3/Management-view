@@ -1,5 +1,8 @@
 import React from "react";
 import axios from 'axios';
+import Table from "./Table";
+
+const colNames = ['id', 'tableId', 'orderId', 'orderState', 'startTime', 'assignTime', 'finishTime']
 
 export default class OrderList extends React.Component {
     state = { 
@@ -15,9 +18,9 @@ export default class OrderList extends React.Component {
 
     render(){
         return(
-            <ul>
-                {this.state.orders.map(order => <li key={order.id}>{order.tableId},{order.orderId},{order.orderState},{order.startTime},{order.assignTime},{order.finishTime}</li>)}
-            </ul>
+            <div>
+            <Table orders={this.state.orders} colNames={colNames}/>
+            </div>
         )
     }
 }
